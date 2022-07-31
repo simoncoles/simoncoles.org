@@ -1,0 +1,23 @@
+image:
+  file: .gitpod.Dockerfile
+
+# Note that the init phase is run in the pre-build but that doesn't have the code checked into it
+# (I think) which means running a pip install with requirements.txt won't do anything useful
+# Although that's not the implication of this https://www.gitpod.io/docs/config-start-tasks
+
+tasks:
+  - name: Jekyll
+    init: cd /workspace/ntoc-live && gem install jekyll && bundle install
+    command: cd /workspace/ntoc-live && bundle install && bundle exec jekyll serve --livereload
+
+vscode:
+  extensions:
+    # - eamodio.gitlens
+    - stkb.rewrap
+    - yzhang.markdown-all-in-one
+
+ports:
+  - port: 4000
+    onOpen: ignore
+  - port: 36157
+    onOpen: ignore

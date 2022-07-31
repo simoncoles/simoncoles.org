@@ -1,0 +1,40 @@
+default:
+    image: registry.gitlab.com/pithos/content-management/jekyll-base
+
+stages:
+  - build
+#   - deploy
+
+build-jekyll: 
+    stage: build
+    script:
+        # - apt-get update && apt-get install -y ruby rubygems ruby-dev make git build-essential
+        # - gem install bundler jekyll
+        - bundle install
+        - bundle exec jekyll build 
+        # Output is in _site
+    artifacts:
+        paths:
+          - _site/
+
+# deploy:
+#     stage: deploy
+#     only: 
+#         - main
+#     needs:
+#         - job: build-jekyll
+#           artifacts: true
+
+#     script:
+#         # - apt-get update && apt-get install -y git rsync openssh-client curl gnupg2 ssh
+#         # There might be a better way of getting the SSH key into the right place but I don't know of it
+#         - mkdir -p ~/.ssh
+#         - ls -al ~/.ssh
+#         - chmod 700 ~/.ssh
+#         - cp "$SSH_KEY" ~/.ssh/id_rsa
+#         - chmod 600 ~/.ssh/id_rsa
+
+#         - "rsync --delete -r -e 'ssh -o StrictHostKeyChecking=no' _site/* ntoc@172.16.8.32:served-content/"
+#         - "rsync --delete -r -e 'ssh -o StrictHostKeyChecking=no' _site/* ntoclive@as1.amphora.solutions:served-content/"
+#         - curl https://ntoc.live/system/reload
+
