@@ -7,8 +7,8 @@ image:
 
 tasks:
   - name: Jekyll
-    init: cd /workspace/ntoc-live && gem install jekyll && bundle install
-    command: cd /workspace/ntoc-live && bundle install && bundle exec jekyll serve --livereload
+    init: cd /workspace/simoncoles.org && gem install jekyll && bundle install
+    command: cd /workspace/simoncoles.org && bundle install && bundle exec jekyll serve --livereload
 
 vscode:
   extensions:
