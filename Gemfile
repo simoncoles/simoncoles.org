@@ -19,9 +19,10 @@ gem "jekyll", "~> 4.3.1"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-feed"
   gem 'jekyll-paginate'
-  gem 'jekyll-sitemap'
+  gem 'jekyll-sitemap'    # https://github.com/jekyll/jekyll-sitemap
+  gem 'jekyll-seo-tag'    # https://github.com/jekyll/jekyll-seo-tag
 end
 
 # gem "webrick", "~> 1.7"
