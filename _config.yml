@@ -23,8 +23,8 @@ title: simoncoles.org
 description: 'Simon Coles Personal Blog'
 baseurl: "" # the subpath of your site, e.g. /blog
 url: 'https://simoncoles.org'
-# twitter_username: jekyllrb
-# github_username:  jekyll
+twitter_username: simoncoles
+github_username:  simoncoles
 
 # Build settings
 # theme: minima
@@ -51,6 +51,7 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - useful/
+  - development_autobuild.sh
 
 
 collections:
