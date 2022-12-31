@@ -4,4 +4,4 @@
 export BUILD_TYPE="Development"
 
 rm -Rf _site
-bundle exec jekyll serve
+bundle exec jekyll serve --livereload
