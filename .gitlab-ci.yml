@@ -1,18 +1,11 @@
 default:
     image: registry.gitlab.com/pithos/content-management/jekyll-base
 
-stages:
-  - build
-
-# see https://docs.gitlab.com/ee/user/project/pages/getting_started/pages_from_scratch.html#specify-the-public-directory-for-artifacts
-
-pages: 
-  stage: build
+pages:
   script:
-      # - apt-get update && apt-get install -y ruby rubygems ruby-dev make git build-essential
-      # - gem install bundler jekyll
-      - bundle install
-      - bundle exec jekyll build -d public
+    - gem install bundler
+    - bundle install
+    - bundle exec jekyll build -d public
   artifacts:
-    paths:  
+    paths:
       - public
