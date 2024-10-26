@@ -7,7 +7,9 @@ RUN gem install jekyll bundler
 WORKDIR /workspace
 
 # Copy the Gemfile and Gemfile.lock
-COPY Gemfile Gemfile.lock ./
+# COPY Gemfile Gemfile.lock ./
+RUN ls -la 
+COPY Gemfile ./
 
 # Install dependencies
 RUN bundle install
